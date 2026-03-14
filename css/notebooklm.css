@@ -1,0 +1,281 @@
+       /* --- 1. DESIGN TOKENS (Deep Coffee & Burgundy) --- */
+        :root {
+            --bg-matte-coffee: #16100D;
+            --text-cream: #E6E1D8;
+            --text-muted: #8F847D;
+            --accent-burgundy: #70181E;
+            --accent-bright: #9E2A2B;
+            --line-color: rgba(230, 225, 216, 0.08);
+            --font-syne: 'Syne', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-matte-coffee);
+            color: var(--text-cream);
+            font-family: var(--font-syne);
+            overflow-x: hidden;
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- 2. TEXTURE (GRAIN) --- */
+        .noise-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.08;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+
+        /* --- 3. READING PROGRESS --- */
+        .reading-progress {
+            position: fixed;
+            top: 0; left: 0; height: 3px; width: 0%;
+            background: var(--accent-bright);
+            z-index: 2000;
+            transition: width 0.1s ease;
+        }
+
+        /* --- 4. NAVIGATION --- */
+        .nav-container {
+            width: 100%;
+            padding: 2rem 5vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: rgba(22, 16, 13, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line-color);
+            position: sticky;
+            top: 0;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            color: var(--text-cream);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            position: relative;
+        }
+        .nav-link:hover { color: var(--text-cream); }
+
+        /* --- 5. ARTICLE HEADER --- */
+        .article-header {
+            padding: 8rem 5vw 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .category-pill {
+            display: inline-block;
+            color: var(--accent-bright);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--accent-burgundy);
+            padding: 5px 15px;
+        }
+
+        .main-title {
+            font-weight: 800;
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: 1;
+            letter-spacing: -1px;
+            margin-bottom: 3rem;
+            color: var(--text-cream);
+        }
+
+        /* --- 6. ARTICLE LAYOUT (Grid) --- */
+        .article-grid {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 4rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 5vw 5rem;
+            position: relative;
+        }
+
+        /* Sidebar (Meta) */
+        .article-meta {
+            position: sticky;
+            top: 150px;
+            height: fit-content;
+            border-top: 1px solid var(--accent-burgundy);
+            padding-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .meta-group label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .meta-group span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-cream);
+        }
+
+        .share-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .share-icon {
+            color: var(--text-muted);
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .share-icon:hover { color: var(--accent-bright); }
+
+        /* Content Body */
+        .article-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #D1CEC7; /* Slightly softer than pure cream for reading */
+        }
+
+        .article-content p {
+            margin-bottom: 2rem;
+        }
+
+        /* Highlight strong text inside article */
+        .article-content strong {
+            color: var(--accent-bright);
+            font-weight: 700;
+        }
+
+        /* Main Image */
+        .hero-image {
+            width: 100%;
+            height: 50vh;
+            margin-bottom: 4rem;
+            border: 1px solid var(--line-color);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%) contrast(1.1);
+            transition: 1s ease;
+        }
+
+        .hero-image:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.02);
+        }
+
+        /* --- FOOTER --- */
+        .page-footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.5;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--line-color);
+            margin-top: auto;
+        }
+
+        @media (max-width: 900px) {
+            .article-grid { grid-template-columns: 1fr; }
+            .article-meta { position: relative; top: 0; flex-direction: row; flex-wrap: wrap; margin-bottom: 2rem; }
+            .main-title { font-size: 3rem; }
+        }
+/* --- HERO IMAGE RESIZING --- */
+.hero-image img {
+    width: 300px; /* Adjust this number to resize the logo */
+    height: auto; 
+    display: block;
+    margin: 0 auto; 
+}
+
+/* --- MOBILE RESPONSIVE STYLES --- */
+@media (max-width: 768px) {
+    
+    /* 1. Stack the grid layout (Sidebar moves to bottom) */
+    .article-grid {
+        display: flex;
+        flex-direction: column;
+        padding: 0 1rem; /* Add side padding for mobile */
+    }
+
+    /* 2. Adjust the sidebar (Meta info) */
+    .article-meta {
+        width: 100%;
+        order: 2; /* Puts meta info below the article text */
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(0,0,0,0.1); /* Separator line */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .meta-group {
+        flex: 1 1 45%; /* Makes meta items sit side-by-side in pairs */
+    }
+
+    /* 3. Adjust Article Content */
+    .article-content {
+        width: 100%;
+        padding-right: 0; /* Remove desktop right padding */
+    }
+
+    /* 4. Fix Title Size */
+    .main-title {
+        font-size: 2rem !important; /* Make title smaller on mobile */
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+    
+    .category-pill {
+        margin-left: 1rem;
+    }
+
+    /* 5. Ensure Logo fits small screens */
+    .hero-image img {
+        max-width: 80%; /* Shrinks logo slightly on phone if needed */
+    }
+
+    /* 6. Navigation padding */
+    .nav-container {
+        padding: 1.5rem 1rem;
+    }
+}

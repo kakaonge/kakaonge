@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Kaka Onge</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/about.css">
+    
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+    <div class="grid-line"></div>
+
+    <svg style="display: none;">
+        <defs>
+            <filter id="distortionFilter">
+                <feTurbulence type="fractalNoise" baseFrequency="0" numOctaves="1" result="warp" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="40" in="SourceGraphic" in2="warp" />
+            </filter>
+        </defs>
+    </svg>
+
+    <nav class="nav-container">
+        <a href="index.html" class="nav-logo click-target">
+            <span class="logo-kaka">[← Esc]</span><span class="logo-onge"></span>
+        </a>
+    </nav>
+
+    <header class="page-header">
+        <h1 class="page-title">
+            The World<br>
+            of <span class="highlight">Kaka Onge</span>
+        </h1>
+        <div class="roles-ticker">
+            Photographer // UI/UX Designer // Developer
+        </div>
+    </header>
+
+    <section class="std-section">
+        <div class="bio-grid">
+            <div class="bio-label">
+                THE<br>NARRATIVE
+            </div>
+            <div class="bio-text">
+                <p>Hello World, I’m <strong>Kaka Onge</strong>, a creative and versatile professional dedicated to telling compelling stories through visuals, design, and code. My work exists at the intersection of art and technology, where creativity meets functionality to produce experiences that are both aesthetically striking and purposefully designed.</p>
+                <p>I strive to craft seamless user experiences, capture impactful imagery, and build elegant digital solutions that resonate with audiences. By combining technical expertise with artistic vision, I transform ideas into meaningful, tangible outcomes across photography, design, and development projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="std-section">
+        <h2 class="section-head">SKILLS</h2>
+        <div class="disciplines-grid">
+            
+            <div class="discipline-card click-target">
+                <h3 class="d-title">Photography</h3>
+                <p class="d-desc">Every shot is intentional, aiming to create a connection between the subject and the viewer while preserving the authenticity of the moment.</p>
+                <ul class="d-list">
+                    <li>Portraits: Capturing essence & mood</li>
+                    <li>Events & Lifestyle: Documenting reality</li>
+                    <li>Creative: Pushing artistic boundaries</li>
+                    <li>Nature & Street: Hidden narratives</li>
+                </ul>
+            </div>
+
+            <div class="discipline-card click-target">
+                <h3 class="d-title">UI/UX Design</h3>
+                <p class="d-desc">Designing inclusive, device-adaptive interfaces that prioritize usability, accessibility, and seamless user experiences across all platforms.</p>
+                <ul class="d-list">
+                    <li>Wireframing & Prototyping</li>
+                    <li>Usability Testing</li>
+                    <li>Mobile & Web Design System</li>
+                </ul>
+            </div>
+
+            <div class="discipline-card click-target">
+                <h3 class="d-title">Full Stack Code</h3>
+                <p class="d-desc">Translating ideas into functional, efficient, and scalable code. Focusing on clean architecture and performance.</p>
+                <ul class="d-list">
+                    <li>Frontend: HTML, CSS, JS, React</li>
+                    <li>Backend: Python, Scalable Systems</li>
+                </ul>
+            </div>
+
+            <div class="discipline-card click-target">
+                <h3 class="d-title">Prompt Engineering</h3>
+                <p class="d-desc">Translating complex human intent into clear instructions that guide LLMs toward reliable reasoning and creativity.</p>
+                <ul class="d-list">
+                    <li>Content Generation Automation</li>
+                    <li>Code Assistance Workflows</li>
+                    <li>Research & Synthesis</li>
+                </ul>
+            </div>
+
+            <div class="discipline-card click-target">
+                <h3 class="d-title">Graphic Design</h3>
+                <p class="d-desc">Beyond aesthetics—focusing on visual storytelling, brand coherence, and strategic communication.</p>
+                <ul class="d-list">
+                    <li>Brand Identity Systems</li>
+                    <li>Digital Marketing Assets</li>
+                    <li>UI Visuals</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="std-section">
+        <h2 class="section-head"> TOOLS </h2>
+        <div class="bio-text">
+            <p>The software and platforms I utilize to execute my vision:</p>
+            <ul class="d-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem; border: none;">
+                <li style="border-left: 2px solid var(--accent-color);"><b>Figma</b> — UI/UX mockups & prototyping</li>
+                <li style="border-left: 2px solid var(--accent-color);"><b>VS Code</b> — Development Environment</li>
+                <li style="border-left: 2px solid var(--accent-color);"><b>Git/GitHub</b> — Version Control</li>
+                <li style="border-left: 2px solid var(--accent-color);"><b>Adobe Suite</b> — Photoshop & Lightroom</li>
+                <li style="border-left: 2px solid var(--accent-color);"><b>AI Suite</b> — ChatGPT, Gemini, Claude,Workik</li>
+            </ul>
+        </div>
+        
+        <div class="tool-logos">
+            <img src="assets/Logos/figma.png" alt="Figma" title="Figma">
+            <img src="assets/Logos/logo.png" alt="VS Code" title="VS Code">
+            <img src="assets/Logos/github.png" alt="GitHub" title="GitHub">
+            <img src="assets/Logos/photoshop.png" alt="Photoshop" title="Photoshop">
+            <img src="assets/Logos/lightroom.png" alt="Lightroom" title="Lightroom">
+            <img src="assets/Logos/canva.png" alt="Canva" title="Canva">
+            <img src="assets/Logos/chatgpt.png" alt="ChatGPT" title="ChatGPT">
+            <img src="assets/Logos/gemini.png" alt="Gemini" title="Gemini">
+            <img src="assets/Logos/claude.png" alt="Claude" title="Claude">
+        </div>
+    </section>
+
+    <section class="std-section footer-cta">
+        <h2 class="d-title" style="font-size: 2rem;">EXPLORE THE WORK</h2>
+        
+        <div class="portfolio-links">
+            <a href="https://www.instagram.com/kakaonge/" target="_blank" class="btn-link click-target">Photography</a>
+            <a href="Mydesigns.html" class="btn-link click-target">Designs</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://x.com/Kakaonge" target="_blank" title="Twitter" class="click-target">
+                <img src="assets/Logos/twitter.png" alt="Twitter">
+            </a>
+            <a href="https://www.instagram.com/kakaonge/" target="_blank" title="Instagram" class="click-target">
+                <img src="assets/Logos/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://ke.linkedin.com/in/kaka-onge" target="_blank" title="LinkedIn" class="click-target">
+                <img src="assets/Logos/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/kakaonge" target="_blank" title="GitHub" class="click-target">
+                <img src="assets/Logos/github.png" alt="GitHub">
+            </a>
+        </div>
+
+        <p style="margin-top: 4rem; font-size: 0.7rem; color: var(--text-muted); opacity: 0.6; letter-spacing: 2px;">(C) 2026 KAKA ONGE. ALL SYSTEMS ONLINE.</p>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Interface Archive | Kaka Onge</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/mydesigns.css">
+</head>
+<body>
+
+    <svg style="display: none;">
+        <defs>
+            <filter id="distortionFilter">
+                <feTurbulence type="fractalNoise" baseFrequency="0 0" numOctaves="1" result="warp" />
+                <feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale="30" in="SourceGraphic" in2="warp" />
+            </filter>
+        </defs>
+    </svg>
+
+    <div class="noise-overlay"></div>
+
+    <nav class="nav-container">
+        <a href="index.html" class="nav-logo click-target">
+            <span class="logo-kaka">[← esc]</span><span class="logo-onge"></span>
+        </a>
+    </nav>
+
+    <main>
+        <header class="page-header">
+            <div class="header-content">
+                <span class="breadcrumb">PORTFOLIO / DESIGNS</span>
+                <h1 class="glitch-text page-title">Designs<br><span class="outline-text highlight">Display</span></h1>
+                <p class="subtitle">Selected UI/UX Works & Visual Systems [2024-2026]</p>
+            </div>
+        </header>
+
+        <section id="designs" class="designs-section">
+            <div class="section-meta">
+                <div class="meta-tags">[ UI/UX ] [ BRANDING ] [ GRAPHICS ]</div>
+            </div>
+
+            <div class="designs-grid">
+                
+                <div class="design-card card click-target" data-full="assets/Designs/Aanalytics.png">
+                    <div class="card-inner">
+                        <div class="image-box">
+                            <img src="assets/Designs/Aanalytics.png" alt="Fintech Dashboard">
+                        </div>
+                        <div class="card-details">
+                            <span class="cat">UI/UX CASE STUDY</span>
+                            <h3>Fintech Dashboard</h3>
+                            <p>Data visualization and analytics system for digital assets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-card card click-target" data-full="assets/Designs/LOGIN UI.png">
+                    <div class="card-inner">
+                        <div class="image-box">
+                            <img src="assets/Designs/LOGIN UI.png" alt="Launch Page">
+                        </div>
+                        <div class="card-details">
+                            <span class="cat">UI/UX DESIGN</span>
+                            <h3>Launch Page</h3>
+                            <p>High-conversion landing page design with bold hero sections.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-card card click-target" data-full="assets/Designs/Desktop - 1.png">
+                    <div class="card-inner">
+                        <div class="image-box">
+                            <img src="assets/Designs/Desktop - 1.png" alt="Portfolio System">
+                        </div>
+                        <div class="card-details">
+                            <span class="cat">PORTFOLIO</span>
+                            <h3>Portfolio System</h3>
+                            <p>Responsive personal branding layout with motion interactions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-card card click-target" data-full="assets/Designs/Desktop WEEQ.png">
+                    <div class="card-inner">
+                        <div class="image-box">
+                            <img src="assets/Designs/Desktop WEEQ.png" alt="Bottle App Concept">
+                        </div>
+                        <div class="card-details">
+                            <span class="cat">EXPERIMENTAL</span>
+                            <h3>Bottle App Concept</h3>
+                            <p>Vibrant mobile interface design for hydration tracking.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-card card click-target" data-full="assets/Designs/Desk.png">
+                    <div class="card-inner">
+                        <div class="image-box">
+                            <img src="assets/Designs/Desk.png" alt="Car Rental Hub">
+                        </div>
+                        <div class="card-details">
+                            <span class="cat">DASHBOARD</span>
+                            <h3>Car Rental Hub</h3>
+                            <p>Modern dashboard design for vehicle booking and management.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="design-card card click-target" data-full="assets/Designs/Products.png">
+                    <div class="card-inner">
+                        <div class="image-box">
+                            <img src="assets/Designs/Products.png" alt="Webpage UI">
+                        </div>
+                        <div class="card-details">
+                            <span class="cat">E-COMMERCE</span>
+                            <h3>Webpage UI - Products</h3>
+                            <p>Minimalist layout focusing on negative space and typography.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="lightbox" class="lightbox-overlay">
+        <button id="lightboxClose" class="lightbox-close click-target" style="font-family: var(--font-head); font-size: 1rem; font-weight: 700; letter-spacing: 2px;">[ ESC TO CLOSE ]</button>
+        <img id="lightboxImage" class="lightbox-img" src="" alt="Expanded Design View">
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

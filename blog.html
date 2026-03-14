@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal | Kaka Onge</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/blog.css">
+    
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+    
+    <div class="reading-progress"></div>
+
+    <nav class="nav-container">
+        <a href="index.html" class="logo">[← esc]</a>
+        <div class="nav-links">
+            
+        </div>
+    </nav>
+
+    <header class="blog-hero">
+        <h1 class="hero-title">Welcome to<br><span>My Blogs.</span></h1>
+        <p class="hero-desc">Technology, creativity & AI insights. Documenting the process of building digital experiences.</p>
+    </header>
+
+    <div class="filter-bar">
+        <button class="filter-btn active">All</button>
+        <button class="filter-btn">Technology</button>
+        <button class="filter-btn">Photography</button>
+        <button class="filter-btn">Creative</button>
+    </div>
+
+    <section class="blog-container">
+        
+        <article class="featured-article">
+            <div class="article-content order-mobile-2">
+                <span class="article-meta">Technology • 3 Min Read</span>
+                <h2 class="article-title">NotebookLM: Changing How Students Learn</h2>
+                <p class="article-excerpt">
+                    NotebookLM is Google’s AI-powered notebook that helps students and researchers summarize, interact with, and understand large volumes of study material quickly.
+                </p>
+                
+                <div style="margin-top: 1rem; display: flex; align-items: center;">
+                    <a href="Notebooklm.html" class="read-btn click-target">Read Article</a>
+                    
+                    <span class="like-action click-target" onclick="toggleLike(this)">
+                        <i class="fa-regular fa-heart"></i> Like
+                    </span>
+                </div>
+            </div>
+            
+            <div class="article-image order-mobile-1">
+                <img src="assets/Designs/teaser.jpg" alt="NotebookLM Cover"> 
+            </div>
+        </article>
+
+
+    </section>
+
+    <footer class="page-footer">
+        (C) 2026 KAKA ONGE
+    </footer>
+
+</body>
+</html>

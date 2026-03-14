@@ -1,0 +1,334 @@
+/* --- 1. DESIGN TOKENS --- */
+:root {
+    /* Palette: Matte Deep Coffee & Burgundy Accents */
+    --bg-matte-coffee: #16100D; /* The specific dark grainy base */
+    
+    --text-cream: #E6E1D8;      /* Warm Paper White */
+    --text-muted: #8F847D;      /* Clay Grey */
+    
+    --accent-burgundy: #70181E; /* Deep Matte Burgundy */
+    --accent-bright: #9E2A2B;   /* Highlight for hovers */
+    
+    --line-color: rgba(230, 225, 216, 0.08); /* Very subtle dividers */
+    
+    --font-syne: 'Syne', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    /* Solid color base for the matte look */
+    background-color: var(--bg-matte-coffee);
+    color: var(--text-cream);
+    font-family: var(--font-syne);
+    overflow-x: hidden;
+    /* FIX: Swapped 100vw to 100% to prevent mobile sideways scrolling */
+    width: 100%; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+
+/* --- 2. THE GRAIN (MATTE FINISH) --- */
+.noise-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 50;
+    /* High opacity noise on dark bg creates the "Matte" texture */
+    opacity: 0.08; 
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+}
+
+/* --- 3. NAVIGATION --- */
+.nav-container {
+    width: 100%;
+    padding: 3rem 5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+    text-transform: lowercase;
+    color: var(--text-cream);
+}
+
+.nav-links {
+    display: flex;
+    gap: 3rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: var(--accent-bright);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover { color: var(--text-cream); }
+.nav-link:hover::after { width: 100%; }
+
+/* --- 4. MAIN LAYOUT (BALANCED GRID) --- */
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 5vw;
+    position: relative;
+    z-index: 10;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    max-width: 1300px;
+    width: 100%;
+    align-items: center; /* Vertically centered for stability */
+}
+
+/* --- LEFT COLUMN: TYPOGRAPHY --- */
+.info-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-heading {
+    font-weight: 800;
+    font-size: clamp(3rem, 5.5vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: 2.5rem;
+    letter-spacing: -2px;
+    color: var(--text-cream);
+}
+
+.hero-heading span {
+    color: var(--accent-burgundy); /* Subtle Burgundy Tone */
+    display: block;
+}
+
+.intro-text {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 4rem;
+    max-width: 420px;
+    font-weight: 500;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--accent-burgundy);
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    font-weight: 700;
+}
+
+.detail-value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-cream);
+}
+
+/* Socials */
+.social-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap; /* Allows wrapping on tiny screens */
+}
+
+.social-btn {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    position: relative;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+.social-btn:hover {
+    color: var(--accent-bright);
+    border-bottom-color: var(--accent-bright);
+}
+
+/* --- RIGHT COLUMN: MATTE FORM --- */
+.form-col {
+    /* No background color to keep the grainy matte feel */
+    padding: 1rem;
+}
+
+.form-group {
+    margin-bottom: 3.5rem; /* Generous spacing */
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 1rem 0;
+    font-family: var(--font-syne);
+    font-size: 1.2rem;
+    color: var(--text-cream);
+    transition: border-color 0.3s ease;
+    border-radius: 0; /* Strict edges */
+}
+
+.form-input:focus {
+    outline: none;
+    border-bottom-color: var(--accent-bright);
+}
+
+/* Floating Label Logic */
+.form-label {
+    position: absolute;
+    top: 1rem;
+    left: 0;
+    font-size: 1.1rem;
+    color: #5C5450; /* Darker matte grey */
+    pointer-events: none;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.form-input:focus ~ .form-label,
+.form-input:not(:placeholder-shown) ~ .form-label {
+    top: -1rem;
+    font-size: 0.75rem;
+    color: var(--accent-bright);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn {
+    width: auto;
+    min-width: 200px;
+    padding: 1.2rem 2.5rem;
+    background: var(--accent-burgundy);
+    color: #E6E1D8;
+    border: none;
+    font-family: var(--font-syne);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    background: var(--accent-bright);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+.page-footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE OVERRIDES
+   ========================================= */
+
+/* Tablets & Small Laptops */
+@media (max-width: 968px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem; /* Tightened from 8rem */
+    }
+    .hero-heading { font-size: clamp(3rem, 8vw, 4rem); }
+    .form-col { padding: 0; }
+}
+
+/* Mobile Phones */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 1.5rem; /* Match header padding of other pages */
+    }
+    
+    .main-wrapper {
+        padding: 6rem 1.5rem 2rem; /* Add top padding so nav doesn't cover content */
+    }
+    
+    .content-grid {
+        gap: 3rem; /* Keep form close to text on small screens */
+    }
+    
+    .hero-heading { 
+        font-size: 2.8rem; 
+        margin-bottom: 1.5rem;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+    }
+    
+    /* Flip contact details to a horizontal stack block for better mobile fit */
+    .contact-details {
+        border-left: none;
+        padding-left: 0;
+        border-top: 1px solid var(--accent-burgundy);
+        padding-top: 1.5rem;
+        gap: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 2.5rem; /* Slightly tighter forms */
+    }
+    
+    .submit-btn {
+        width: 100%; /* Full width button for easy thumb tapping */
+    }
+}
