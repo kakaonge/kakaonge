@@ -17,41 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.ticker.lagSmoothing(0, 0);
 
-    // --- 1. PRELOADER, CAPTCHA & SESSION STORAGE LOGIC ---
-    const preloader = document.getElementById('preloader');
-    const robotCheck = document.getElementById('robot-check');
+    // --- 1. WAVE ANIMATION (INSTANT START) ---
     const waveText = document.querySelector('.wave-text');
-
-    // Check if the user has already passed the captcha this session
-    if (sessionStorage.getItem('kakaPreloaderSeen') === 'true') {
-        // User already verified: Hide preloader instantly, allow scroll
-        if (preloader) preloader.style.display = 'none';
-        document.body.style.overflowY = 'auto'; // Just in case CSS locked it
-        if (waveText) waveText.classList.add('wave-active');
-        // We do NOT stop lenis here because they skip the preloader
-    } else {
-        // First time visit: Lock scroll and wait for verification
-        lenis.stop();
-
-        if (robotCheck) {
-            robotCheck.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    // Save to session storage so it doesn't show again
-                    sessionStorage.setItem('kakaPreloaderSeen', 'true');
-                    
-                    setTimeout(() => {
-                        preloader.classList.add('fade-out');
-                        setTimeout(() => {
-                            preloader.style.display = 'none'; // Remove from DOM flow
-                            document.body.style.overflowY = 'auto'; // Unlock native CSS scroll
-                            lenis.start(); // Unlock smooth scroll
-                            if (waveText) waveText.classList.add('wave-active'); 
-                        }, 600); 
-                    }, 400);
-                }
-            });
-        }
+    if (waveText) {
+        // Add a slight delay just so it looks nice on load
+        setTimeout(() => {
+            waveText.classList.add('wave-active');
+        }, 300);
     }
+    
+    // Ensure native scroll is unlocked just in case CSS holds it
+    document.body.style.overflowY = 'auto'; 
 
     // --- 2. HERO TEXT DISTORTION ---
     const filter = document.querySelector('#distortionFilter feTurbulence');
@@ -81,12 +57,20 @@ document.addEventListener("DOMContentLoaded", () => {
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navList.classList.toggle('active');
+            
+            // Optional: stop body scroll when menu is open on mobile
+            if(navList.classList.contains('active')) {
+                lenis.stop();
+            } else {
+                lenis.start();
+            }
         });
 
         document.querySelectorAll('.nav-list a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navList.classList.remove('active');
+                lenis.start(); // Ensure scroll restarts if a link is clicked
             });
         });
     }
