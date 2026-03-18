@@ -275,7 +275,9 @@ img { max-width: 100%; height: auto; }
 /* --- 6. SHARED SECTION STYLES --- */
 .std-section { position: relative; z-index: 20; background-color: var(--bg-color); padding: 15vh 5vw; border-top: 1px solid var(--line-color); }
 .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; border-bottom: 1px solid var(--line-color); padding-bottom: 2rem; }
-.section-title { font-family: var(--font-head); font-size: 4rem; font-weight: 800; color: var(--text-color); line-height: 1; text-transform: uppercase; letter-spacing: -1px; }
+
+/* --- TYPOGRAPHY FIX APPLIED HERE --- */
+.section-title { font-family: var(--font-head); font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; color: var(--text-color); line-height: 1; text-transform: uppercase; letter-spacing: -1px; overflow-wrap: break-word; word-break: break-word; hyphens: auto; }
 
 .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
 .about-text p { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; color: var(--text-muted); }
@@ -316,7 +318,10 @@ img { max-width: 100%; height: auto; }
     .card-image { display: block; object-fit: cover; }
     
     .about-content { grid-template-columns: 1fr; gap: 2rem; }
-    .section-title { font-size: 3rem !important; margin-top: 2rem; padding-top: 2rem; word-break: break-word; line-height: 1.2; }
+
+    /* --- MOBILE TYPOGRAPHY FIX APPLIED HERE --- */
+    .section-title { font-size: clamp(2rem, 10vw, 3rem) !important; margin-top: 2rem; padding-top: 2rem; word-break: break-word; hyphens: auto; line-height: 1.2; }
+    
     .about-section { padding-top: 4rem !important; }
     .about-text { width: 100%; padding-right: 0; }
     .about-stats { border-left: none; padding-left: 0; border-top: 1px solid var(--line-color); padding-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; width: 100%; }
