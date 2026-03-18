@@ -1,30 +1,47 @@
- Kaka Onge | Creative Developer Portfolio
+ 👋 Hi, I'm Kaka Onge
 
-A premium, cinematic digital experience showcasing UI/UX designs and visual systems. Built with a focus on buttery-smooth interactions, matte aesthetics, and high-performance motion.
+I am a passionate **Mobile Application Development student at KCA University and an aspiring Flutter Engineer focused on building modern digital experiences and scalable applications.
 
- Live Demo
-View the live site here: [Coming Soon / Your Link Here]
+I enjoy transforming ideas into creative, functional, and visually engaging products. My work spans web development, mobile applications, UI/UX design, and digital systems, where I combine technology with creativity to build meaningful solutions.
 
-Tech Stack
-HTML5- Semantic structure
-CSS3 -Custom properties, CSS Grid, and sophisticated matte styling
-GSAP (GreenSock) -  High-end scroll-driven animations
-Lenis- Industry-standard smooth scrolling
-JavaScript (ES6+)  - Functional logic, Lightbox systems, and Session-based preloading
+What I Do
 
- Key Features
-Matte Aesthetic:  A deep coffee-themed palette with subtle grain overlays and premium typography.
-Smooth Scroll Architecture: Decoupled scrolling using Lenis synced to GSAP Tickers for zero-latency interactions.
-Session-Aware Preloader: A custom CAPTCHA preloader that only triggers on the user's first visit per session to respect UX.
-Cinematic Lightbox:An edge-to-edge modal system for viewing high-resolution designs without distortion.
-Responsive Grid: A bulletproof mobile-first layout that handles extreme aspect ratios for design screenshots.
-SVG Distortion: Real-time text displacement effects mapped to mouse movement and scroll.
- 
- Project Structure
-```text
-├── assets/             # Images, Designs, and Branding assets
-├── css/                # Modular stylesheets (mydesigns.css, etc.)
-├── js/                 # Interaction logic and animation controllers
-├── index.html          # Landing experience
-├── about.html          # Professional background
-└── designs.html        # Interface archive
+- 📱 Mobile App Development (Flutter & Android)
+- 🌐 Web Development (HTML, CSS, JavaScript)
+- 🎨 UI/UX Design & Creative Interfaces
+- ⚙️ Digital Systems Development
+- 🧠 Technology Research & Innovation
+
+  Current Focus
+
+- Becoming a professional Flutter engineer
+- Building creative portfolio projects
+- Developing modern digital systems
+- Improving software architecture and UI design
+
+ Tech Stack
+Languages: JavaScript, Java, Dart
+Frontend: HTML, CSS, JavaScript
+Mobile: Flutter
+Tools: Git, GitHub, VS Code
+Design: Photoshop, Creative UI/UX tools
+
+ Projects I'm Working On
+
+- Digital Queue Management System
+- Restaurant Management System
+- Creative Portfolio Website
+- Mobile Applications with Flutter
+
+ Beyond Code
+
+I am also the co-creator of The Tech House Podcast, where we explore technology, innovation, and the future of digital culture.
+
+📫 Connect With Me
+GitHub: https://github.com/yourusername
+Portfolio: (your portfolio link)
+LinkedIn: (your LinkedIn link)
+
+
+
+ “Building technology that blends creativity, design, and innovation.”
