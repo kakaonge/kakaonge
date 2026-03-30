@@ -1,6 +1,6 @@
  👋 Hi, I'm Kaka Onge
 
-I am a passionate **Mobile Application Development student at KCA University and an aspiring Flutter Engineer focused on building modern digital experiences and scalable applications.
+I am a passionate Mobile Application Development student at KCA University and an aspiring Flutter Engineer focused on building modern digital experiences and scalable applications.
 
 I enjoy transforming ideas into creative, functional, and visually engaging products. My work spans web development, mobile applications, UI/UX design, and digital systems, where I combine technology with creativity to build meaningful solutions.
 
